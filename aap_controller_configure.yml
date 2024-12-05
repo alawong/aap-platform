@@ -1,0 +1,15 @@
+---
+---
+- name: Configure Automation Controller
+  hosts: localhost
+  vars_files:
+    - vars/config-as-code/controller/credentials.yml
+    - vars/config-as-code/controller/inventories.yml
+    - vars/config-as-code/controller/inventory_sources.yml
+    - vars/config-as-code/controller/organizations.yml
+    - vars/config-as-code/controller/projects.yml
+    - vars/config-as-code/controller/settings.yml
+    - vars/config-as-code/controller/users.yml
+
+  roles:
+    - infra.controller_configuration.dispatch

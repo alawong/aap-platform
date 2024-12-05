@@ -1,0 +1,9 @@
+---
+---
+- name: Configure Private Automation Hub
+  hosts: localhost
+  vars_files:
+    - vars/config-as-code/controller/repositories.yml
+
+  roles:
+    - infra.ah_configuration.dispatch

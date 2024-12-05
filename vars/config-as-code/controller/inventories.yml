@@ -1,0 +1,16 @@
+---
+controller_inventories:
+  - name: AWS Inventory
+    organization: ARM organisation
+    description: Primary inventory
+    kind: smart
+
+  - name: GCP Inventory
+    organization: ARM organisation
+    description: GCP inventory
+    kind: smart
+
+  - name: Azure Inventory
+    organization: ARM organisation
+    description: Azure inventory
+    kind: smart
