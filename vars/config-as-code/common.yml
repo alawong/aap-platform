@@ -1,0 +1,9 @@
+---
+# should be vault encrypted
+controller_hostname: hostname
+controller_username: username
+controller_password: password
+
+ah_hostname: hostname
+ah_username: username
+ah_password: password
