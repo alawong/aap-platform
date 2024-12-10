@@ -1,0 +1,14 @@
+---
+controller_templates:
+- name: jt_aap_controller_configure
+  project: ARM Project
+  playbook: aap_controller_configure.yml
+  inventory: Demo Inventory
+  credentials: 
+    - Automation Controller Service Account Credential
+- name: jt_aap_pah_configure
+  project: ARM Project
+  playbook: aap_pah_configure.yml
+  inventory: Demo Inventory
+  credentials:
+    - Private Automation Hub Service Account Credential

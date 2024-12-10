@@ -1,0 +1,11 @@
+---
+controller_projects:
+- name: ARM Project
+  organization: ARM organisation
+  scm_url: https://github.com/alawong/aap-arm.git
+  scm_branch: main 
+  credential: Source Control Credential
+  scm_clean: true
+  scm_delete_on_update: false
+  scm_type: git
+  scm_update_on_launch: false

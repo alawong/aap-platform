@@ -1,25 +1,9 @@
 ---
 controller_inventory_sources:
-  - name: AWS Inventory Source
-    source: aws
-    inventory: AWS inventory
-    credential: AWS credential
-    overwrite: true
-    update_on_launch: true
-    update_cache_timeout: 0
-
-  - name: GCP Inventory Source
-    source: gcp
-    inventory: GCP inventory
-    credential: GCP credential
-    overwrite: true
-    update_on_launch: true
-    update_cache_timeout: 0
-
-  - name: Azure Inventory Source
-    source: azure
-    inventory: Azure inventory
-    credential: Azure credential
-    overwrite: true
-    update_on_launch: true
-    update_cache_timeout: 0
+- name: Azure Inventory Source
+  source: azure
+  inventory: Azure inventory
+  credential: Azure credential
+  overwrite: true
+  update_on_launch: true
+  update_cache_timeout: 0

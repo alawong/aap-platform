@@ -1,9 +1,11 @@
 ---
----
 - name: Configure Private Automation Hub
   hosts: localhost
   vars_files:
-    - vars/config-as-code/controller/repositories.yml
+    - vars/config-as-code/common.yml
+    - vars/config-as-code/pah/collection_remotes.yml
+    - vars/config-as-code/pah/collection_repositories.yml
 
   roles:
-    - infra.ah_configuration.dispatch
+    - infra.ah_configuration.collection_remote
+    - infra.ah_configuration.collection_repository

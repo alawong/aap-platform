@@ -1,4 +1,4 @@
 ---
 collections:
-  - name: infra.aap_configuration
+  - name: infra.controller_configuration
     version: 2.11.0

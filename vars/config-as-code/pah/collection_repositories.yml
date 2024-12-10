@@ -1,0 +1,11 @@
+---
+ah_collection_repositories:
+- name: rh-certified
+  description: Contains all Red Hat certified Ansible collections
+  remote: rh-certified
+  wait: true
+
+- name: community
+  description: Community Ansible collections
+  remote: community
+  wait: true

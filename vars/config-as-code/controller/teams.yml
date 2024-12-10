@@ -1,4 +1,4 @@
 ---
 controller_teams: 
-  - name: ARM team
-    organization: ARM organisation
+- name: ARM team
+  organization: ARM organisation
