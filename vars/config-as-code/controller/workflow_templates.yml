@@ -21,3 +21,25 @@ controller_workflows:
         organization: ARM organisation
         name: jt_aap_controller_configure
         type: job_template # tells AAP that it's a JT
+
+- name: wt_aap_pah_configure
+  description: Workflow Template that Configures PAH as Code. Requires project sync in order to get updated CaC in the Git repo, prior to actually running the JT.
+  organization: ARM organisation
+  survey_enabled: false
+  allow_simultaneous: false
+  webhook_service: 'gitlab'
+  destroy_current_nodes: true
+  simplified_workflow_nodes:
+    - identifier: "ARM project sync" # project sync
+      organization: ARM organisation
+      unified_job_template:
+        organization: ARM organisation
+        name: "ARM Project"
+        type: project # tells AAP that it's a project sync
+      success_nodes:
+        - jt_aap_pah_configure
+    - identifier: jt_aap_pah_configure # JT run
+      unified_job_template:
+        organization: ARM organisation
+        name: jt_aap_pah_configure
+        type: job_template # tells AAP that it's a JT
