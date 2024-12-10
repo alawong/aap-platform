@@ -1,2 +1,6 @@
 ---
-# controller_settings: 
+controller_settings: 
+  settings:
+    AWX_COLLECTIONS_ENABLED: true
+    AWX_ROLES_ENABLED: true
+  

@@ -10,7 +10,7 @@
     - vars/config-as-code/controller/job_templates.yml
     - vars/config-as-code/controller/organisations.yml
     - vars/config-as-code/controller/projects.yml
-    # - vars/config-as-code/controller/settings.yml
+    - vars/config-as-code/controller/settings.yml
     - vars/config-as-code/controller/teams.yml
     - vars/config-as-code/controller/users.yml
     - vars/config-as-code/controller/workflow_templates.yml

@@ -7,7 +7,6 @@ ah_collection_remotes:
     - ansible.posix
     - azure.azcollection
     - microsoft.ad
-  ah_configuration_async_timeout: 0
   token: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           63396637356539363437633837343065623363353538646134336565643364326163623637636438
