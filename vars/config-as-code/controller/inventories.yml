@@ -4,8 +4,8 @@ controller_inventories:
   organization: ARM organisation
   description: Azure inventory
 - name: GCP Remote Exec Inventory
-  organization: ARM organization
+  organization: ARM organisation
   description: Remote Execution Nodes in GCP
 - name: GCP Managed Nodes
-  organization: ARM organization
+  organization: ARM organisation
   description: Managed Nodes in GCP

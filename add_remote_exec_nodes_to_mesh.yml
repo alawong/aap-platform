@@ -1,0 +1,109 @@
+---
+- name: Add Remote Execution Nodes to Automation Mesh
+  hosts: bootstrap-node
+  vars:
+    controller_validate_certs: false
+    work_dir: "/tmp"
+  vars_files:
+    - vars/config-as-code/common.yml
+    - vars/config-as-code/controller/instances.yml
+  tasks:
+
+    - name: Get Remote Exec Instances
+      ansible.builtin.set_fact:
+        remote_instances: "{{ controller_instances }}"
+
+    - name: Install Prerequisites
+      ansible.builtin.debug:
+        msg:
+          - "Install ansible-core"
+          - "Setup Subs"
+          - "Is receptor package available"
+
+    - name: Create Work Dir
+      ansible.builtin.file:
+        path: "{{ work_dir }}"
+        state: directory
+
+    - name: Download install bundle from Controller
+      ansible.builtin.get_url:
+        url: "{{ controller_hostname }}/api/v2/instances/{{ item.hostname }}/install_bundle/"
+        dest: "{{ work_dir }}/{{ item.hostname }}.tar.gz"
+        force_basic_auth: yes
+        username: "{{ controller_username }}"
+        password: "{{ controller_password }}"
+        validate_certs: false
+      loop: "{{ remote_instances }}"
+
+    - name: Create temporary install_bundle work directory
+      ansible.builtin.file:
+        path: "{{ work_dir }}/install_bundle_work"
+        state: directory
+
+    - name: Untar install_bundle archive
+      ansible.builtin.unarchive:
+        src: "{{ work_dir }}/{{ item.hostname }}.tar.gz"
+        dest: "{{ work_dir }}/install_bundle_work/"
+        remote_src: true
+      loop: "{{ remote_instances }}"
+
+    # We need to update the inventory with the ansible user or key 
+
+          #    - name: Fix the inventory to run locally
+          #ansible.builtin.template:
+          #src: inventory.j2
+          #dest: "{{ work_dir }}/install_bundle_work/{{ inventory_hostname }}_install_bundle/inventory.yml"
+
+
+          #    - name: Install Receptor
+          #ansible.builtin.shell: "./install.sh"
+          #args:
+          #chdir: "{{ work_dir }}/install_bundle_work/{{ inventory_hostname }}_install_bundle/"
+
+    # 3rd play here with the healthcheck
+
+    - name: Run a health check on  Remote Execution Node
+      ansible.builtin.uri:
+        url: "{{ controller_hostname }}/api/v2/instances/{{ item.hostname }}/health_check/"
+        user: "{{ controller_username }}"
+        password: "{{ controller_password }}"
+        validate_certs: false
+        method: POST
+        force_basic_auth: true
+        status_code: 200
+        body_format: json
+      loop: "{{ remote_instances }}"
+      loop_control:
+        label: "{{ item.hostname }}"
+      register: reg_health_check_init
+
+    - name: Get Health Check results
+      ansible.builtin.uri:
+        url: "{{ controller_hostname }}/api/v2/instances/{{ item.hostname }}/health_check/"
+        user: "{{ controller_username }}"
+        password: "{{ controller_password }}"
+        validate_certs: false
+        method: GET
+        force_basic_auth: true
+        status_code: 200
+        body_format: json
+      loop: "{{ remote_instances }}"
+      loop_control:
+        label: "{{ item.hostname}}"
+      register: reg_health_check
+      ignore_errors: true
+      until: reg_health_check.json.errors == ""
+      retries: 3
+      delay: 2
+
+    - name: Validate Health Check Results
+      ansible.builtin.debug:
+        msg:
+          - "Last Health Check: {{ item.json.last_health_check }}" 
+          - "Errors: {{ (item.json.errors == '') | ternary('None', item.json.errors) }}"
+      failed_when:
+        - item.json.errors != ''
+      loop: "{{ reg_health_check.results }}"
+      loop_control:
+        label: "{{ item.json.hostname }}"
+
