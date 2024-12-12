@@ -1,0 +1,6 @@
+controller_instance_groups:
+  - name: gcp_remote_exec
+    state: present
+    instances:
+      - 35.229.57.226
+      - 34.73.119.129

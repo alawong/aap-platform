@@ -1,0 +1,17 @@
+controller_instances:
+  - hostname: 35.229.57.226
+    enabled: true
+    managed_by_policy: false
+    node_type: execution
+    node_state: installed
+    listener_port: 27199
+    peers_from_control_nodes: true
+  - hostname: 34.73.119.129
+    enabled: true
+    managed_by_policy: false
+    node_type: execution
+    node_state: installed
+    listener_port: 27199
+    peers_from_control_nodes: true
+
+
