@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Install Receptor Ansible Collection
+echo "Installing ansible receptor collection"
+ansible-galaxy collection install --force -r {{ first_node_install_bundle_dir }}/requirements.yml
+
+# Install Receptor in Nodes
+echo "Installing Receptor in remote execution nodes"
+
+for instance in {{ remote_execution_instances_flat_list }}
+do
+ansible-playbook -i "${instance}_install_bundle/inventory.yml" "${instance}_install_bundle/install_receptor.yml" 
+done
+

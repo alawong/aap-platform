@@ -1,6 +1,6 @@
 all:
   hosts:
     bootstrap-node:
-      ansible_host: 35.237.74.83
+      ansible_host: 35.196.83.155
     managed-node-1:
       ansible_host: 192.168.112.5

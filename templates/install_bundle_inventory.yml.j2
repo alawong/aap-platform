@@ -1,0 +1,9 @@
+---
+all:
+  hosts:
+    remote-execution:
+      ansible_host: {{ remote_exec_instance }}
+      ansible_user: {{ remote_exec_ansible_user }} # user provided
+      ansible_password: {{ remote_exec_ansible_password }}
+      ansible_host_key_checking: false # temporary workaround until authentication mechanism is decided.
+      # ansible_ssh_private_key_file: ~/.ssh/id_rsa
