@@ -2,12 +2,17 @@
 # should be vault encrypted
 controller_hostname: https://controller.aapceddmppkyd6jo.ansiblecloud.redhat.com
 controller_username: admin
-controller_password: Amino9Yo-yoItem
+controller_password: <password> # TODO
 
-ah_hostname: https://hub.aap7ppx4ez4blo7e.ansiblecloud.redhat.com
+ah_hostname: https://hub.aapceddmppkyd6jo.ansiblecloud.redhat.com
 ah_username: admin
-ah_password: password
-ah_configuration_async_timeout: 0
+ah_password: <password> # TODO
+ah_configuration_async_timeout: 1800
+
+proxy_url: url
+proxy_username: user 
+proxy_password: password
+
 
 remote_exec_ansible_user: ansible
-remote_exec_ansible_password: password
+remote_exec_ansible_password: <password> # TODO

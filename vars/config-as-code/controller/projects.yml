@@ -1,10 +1,10 @@
 ---
 controller_projects:
-- name: ARM Project
-  organization: ARM organisation
-  scm_url: https://github.com/alawong/aap-arm.git
+- name: proj_arm
+  organization: org_arm
+  scm_url: <scm_url> # TODO
   scm_branch: main 
-  credential: Source Control Credential
+  credential: cred_gitlab
   scm_clean: true
   scm_delete_on_update: false
   scm_type: git

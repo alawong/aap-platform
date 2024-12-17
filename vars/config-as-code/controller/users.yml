@@ -1,5 +1,5 @@
 ---
 controller_users:
-- username: alan
-  password: password
+- username: aap_admin
+  password: <password> # TODO
   is_superuser: true

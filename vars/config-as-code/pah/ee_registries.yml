@@ -1,0 +1,9 @@
+---
+ah_ee_registries:
+- name: registry.redhat.io
+  url: registry.redhat.io
+  sync: true
+  wait: true
+  timeout: 1800
+  username: <user> # TODO
+  password: <password> # TODO

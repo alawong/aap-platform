@@ -5,6 +5,11 @@ ah_collection_repositories:
   remote: rh-certified
   wait: true
 
+- name: validated
+  description: Ansible collections that have been validated by Red Hat
+  remote: validated
+  wait: true
+
 - name: community
   description: Community Ansible collections
   remote: community
