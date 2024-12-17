@@ -1,14 +1,16 @@
 ---
 - name: Add Remote Execution Nodes to Automation Mesh
   hosts: bootstrap-node
+
   vars:
     controller_validate_certs: false
     work_dir: "/tmp"
+
   vars_files:
     - vars/config-as-code/common.yml
     - vars/config-as-code/controller/instances.yml
-  tasks:
 
+  tasks:
     - name: Get Remote Exec Instances
       ansible.builtin.set_fact:
         remote_instances: "{{ controller_instances | map(attribute='hostname') | list }}"
