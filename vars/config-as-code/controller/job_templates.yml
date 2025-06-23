@@ -1,14 +1,17 @@
 ---
 controller_templates:
 - name: jt_aap_controller_configure
-  project: ARM Project
+  organization: org_platform
+  project: proj_platform
   playbook: aap_controller_configure.yml
-  inventory: Demo Inventory
+  inventory: inv_localhost
   credentials: 
-    - cred_aap_controller
+    - cred_platform_aap_controller
+
 - name: jt_aap_pah_configure
-  project: ARM Project
+  organization: org_platform
+  project: proj_platform
   playbook: aap_pah_configure.yml
-  inventory: Demo Inventory
+  inventory: inv_localhost
   credentials:
-    - cred_aap_pah
+    - cred_platform_aap_pah

@@ -1,4 +1,6 @@
 ---
 controller_teams: 
-- name: team_arm
-  organization: ARM organisation
+- name: team_platform
+  organization: org_platform
+- name: team_network
+  organization: org_network

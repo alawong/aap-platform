@@ -1,8 +1,2 @@
 ---
-controller_inventories:
-- name: inv_azure
-  organization: org_arm
-  description: Azure inventory
-- name: inv_gcp
-  organization: org_arm
-  description: Managed Nodes in GCP
+# controller_inventories:

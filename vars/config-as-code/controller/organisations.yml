@@ -2,3 +2,5 @@
 controller_organizations: 
 - name: org_arm
   description: Default organisation
+- name: org_network
+  description: Network organisation

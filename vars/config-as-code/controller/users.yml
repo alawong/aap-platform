@@ -3,3 +3,9 @@ controller_users:
 - username: aap_admin
   password: <password> # TODO
   is_superuser: true
+- username: svc_aap_platform
+  password: <password> # TODO
+  organization: org_platform
+- username: svc_aap_network
+  password: <password> # TODO
+  organization: org_network

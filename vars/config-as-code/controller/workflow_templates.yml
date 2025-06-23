@@ -2,44 +2,44 @@
 controller_workflows:
 - name: wt_aap_controller_configure
   description: Workflow Template that Configures Automation Controller as Code. Requires project sync in order to get updated CaC in the Git repo, prior to actually running the JT.
-  organization: org_arm
+  organization: org_platform
   survey_enabled: false
   allow_simultaneous: false
   webhook_service: 'gitlab'
   destroy_current_nodes: true
   simplified_workflow_nodes:
-    - identifier: "proj_arm sync" # project sync
-      organization: org_arm
+    - identifier: "proj_platform sync" # project sync
+      organization: org_platform
       unified_job_template:
-        organization: org_arm
-        name: proj_arm
+        organization: org_platform
+        name: proj_platform
         type: project # tells AAP that it's a project sync
       success_nodes:
         - jt_aap_controller_configure
     - identifier: jt_aap_controller_configure # JT run
       unified_job_template:
-        organization: org_arm
+        organization: org_platform
         name: jt_aap_controller_configure
         type: job_template # tells AAP that it's a JT
 
 - name: wt_aap_pah_configure
   description: Workflow Template that Configures PAH as Code. Requires project sync in order to get updated CaC in the Git repo, prior to actually running the JT.
-  organization: org_arm
+  organization: org_platform
   survey_enabled: false
   allow_simultaneous: false
   webhook_service: 'gitlab'
   destroy_current_nodes: true
   simplified_workflow_nodes:
-    - identifier: "proj_arm sync" # project sync
-      organization: org_arm
+    - identifier: "proj_platform sync" # project sync
+      organization: org_platform
       unified_job_template:
-        organization: org_arm
-        name: proj_arm
+        organization: org_platform
+        name: proj_platform
         type: project # tells AAP that it's a project sync
       success_nodes:
         - jt_aap_pah_configure
     - identifier: jt_aap_pah_configure # JT run
       unified_job_template:
-        organization: org_arm
+        organization: org_platform
         name: jt_aap_pah_configure
         type: job_template # tells AAP that it's a JT
