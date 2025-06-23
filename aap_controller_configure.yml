@@ -1,5 +1,5 @@
 ---
-- name: Configure Automation Controller
+- name: Configure AAP 2.5
   hosts: localhost
   vars_files:
     - vars/config-as-code/common.yml
@@ -16,6 +16,9 @@
     - vars/config-as-code/controller/workflow_templates.yml
     - vars/config-as-code/controller/instances.yml
     - vars/config-as-code/controller/instance_groups.yml
+    - vars/config-as-code/pah/collection_remotes.yml
+    - vars/config-as-code/pah/collection_repositories.yml
+    - vars/config-as-code/pah/ee_registries.yml
 
   roles:
-    - infra.controller_configuration.dispatch
+    - infra.aap_configuration.dispatch

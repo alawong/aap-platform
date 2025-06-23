@@ -1,6 +1,6 @@
 # aap-arm
 
-Repository containing config as code for AAP 2.4.
+Repository containing config as code for AAP 2.5.
 
 This includes seeding for:
 
