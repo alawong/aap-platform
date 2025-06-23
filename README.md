@@ -1,4 +1,4 @@
-# aap-arm
+# aap-platform
 
 Repository containing config as code for AAP 2.4.
 
@@ -28,9 +28,9 @@ This includes seeding for:
 
 2. Clone this repository. This contains the configuration playbook `aap_controller_configure.yml` and `aap_pah_configure.yml`, as well as all of the default configuration for Automation Controller.
 
-    `git clone https://github.com/alawong/aap-arm.git`
+    `git clone https://github.com/alawong/aap-platform.git`
 
-3. Edit `vars/config-as-code/common.yml within `arm-aap` to point to your controller host and PAH host.
+3. Edit `vars/config-as-code/common.yml within `aap-platform` to point to your controller host and PAH host.
 
 4. Fill in the blanks within `vars/config-as-code/`. This will be relevant to their required setup.
 
