@@ -1,9 +1,0 @@
----
-- name: Dummy Playbook
-  hosts: all
-  tasks:
-    - name: Create a dummy file
-      become: true
-      ansible.builtin.file:
-        path: /tmp/dummy.txt
-        state: touch

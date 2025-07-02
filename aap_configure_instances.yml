@@ -1,0 +1,11 @@
+---
+- name: Configure AAP 2.5
+  hosts: localhost
+  vars_files:
+    - vars/config-as-code/common.yml
+    - vars/config-as-code/controller/instances.yml
+    - vars/config-as-code/controller/instance_groups.yml
+
+  roles:
+    - infra.controller_configuration.instances
+    - infra.controller_configuration.instance_groups

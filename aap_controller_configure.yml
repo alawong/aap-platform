@@ -14,8 +14,6 @@
     - vars/config-as-code/controller/teams.yml
     - vars/config-as-code/controller/users.yml
     - vars/config-as-code/controller/workflow_templates.yml
-    - vars/config-as-code/controller/instances.yml
-    - vars/config-as-code/controller/instance_groups.yml
 
   roles:
     - infra.controller_configuration.dispatch

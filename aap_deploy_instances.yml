@@ -20,7 +20,7 @@
         msg:
           - "Warning the remote execution nodes require the following. Please make sure they are configured:"
           - "ansible-automation-platform-2.4-for-rhel-8-x86_64-rpms enabled for the receptor packages"
-          - "Access to Galaxy or Automation Hub to download the receptor ansible collection"
+          - "Access to Galaxy or Automation Hub to download the ansible.receptor collection"
           - "Ansible User setup"
           - "Ansible User Authentication. (user or sshkey). templates/install_bundle_inventory.yml.j2 might require editing if ssh key is used."
           - "host key verification via the bootstrap node. hostkey verification check is disabled at this point!"
@@ -114,7 +114,7 @@
       register: reg_health_check
       ignore_errors: true
       until: reg_health_check.json.errors == ""
-      retries: 3
+      retries: 5
       delay: 2
 
     - name: Validate Health Check Results
