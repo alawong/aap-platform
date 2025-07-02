@@ -30,9 +30,9 @@ This includes seeding for:
 
     `git clone https://github.com/alawong/aap-platform.git`
 
-3. Edit `vars/config-as-code/common.yml within `aap-platform` to point to your controller host and PAH host.
+3. Edit `vars/config-as-code/common.yml` within `aap-platform` to point to your controller host and PAH host.
 
-4. Fill in the blanks within `vars/config-as-code/`. This will be relevant to their required setup.
+4. Fill in the blanks within `vars/config-as-code/`.
 
 5. Run `aap_controller_configure.yml`. This will also require the vault password you used to decrypt Ansible Vault encrypted secrets.
 
