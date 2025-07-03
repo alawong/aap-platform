@@ -3,26 +3,32 @@ ah_collection_remotes:
 - name: rh-certified
   url: https://console.redhat.com/api/automation-hub/content/published/
   auth_url: https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
-  requirements:
+  requirements: # example certified collections. Make sure your collections are put in the right remote otherwise when performing syncing, it will fail to find some collections
     - ansible.controller
     - ansible.posix
     - azure.azcollection
     - microsoft.ad
     - servicenow.itsm
   token: <token> # TODO
+  proxy_url: <proxy URL> # TODO
+  proxy_username: <proxy username> # TODO
+  proxy_password: <proxy_password> # TODO
 
 - name: validated
   url: https://console.redhat.com/api/automation-hub/content/validated/
   auth_url: https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
-  requirements:
-    - infra.controller_configuration
-    - infra.ah_configuration
   token: <token> # TODO
+  proxy_url: <proxy URL> # TODO
+  proxy_username: <proxy username> # TODO
+  proxy_password: <proxy_password> # TODO
 
 - name: community
   url: https://galaxy.ansible.com/api/
   requirements:
     - community.general
     - community.hashi_vault
+  proxy_url: <proxy URL> # TODO
+  proxy_username: <proxy username> # TODO
+  proxy_password: <proxy_password> # TODO
 
 

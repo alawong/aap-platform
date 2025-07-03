@@ -1,2 +1,6 @@
 ---
-# controller_inventories:
+controller_inventories:
+  - name: inv_localhost
+    organization: org_platform
+  - name: inv_example
+    organization: org_platform

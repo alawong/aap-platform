@@ -1,4 +1,4 @@
 controller_instance_groups:
-  - name: gcp_remote_exec
+  - name: ig_example
     state: present
     instances: "{{ controller_instances | map(attribute='hostname') | list }}"

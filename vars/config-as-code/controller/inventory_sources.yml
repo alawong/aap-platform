@@ -1,2 +1,18 @@
 ---
-# controller_inventory_sources:
+controller_inventory_sources:
+  - name: inv_src_example_platform
+    source: scm
+    source_project: proj_platform
+    source_path: inventories\example_inventory.yml
+    inventory: inv_example
+    description: Inventory sourced from a Project
+    overwrite: true
+    update_on_launch: true
+  - name: inv_src_localhost.yml
+    source: scm
+    source_project: proj_platform
+    source_path: inventories\localhost.yml
+    inventory: inv_localhost
+    description: localhost inventory source
+    overwrite: true
+    update_on_launch: true

@@ -1,18 +1,13 @@
 ---
-# should be vault encrypted
-controller_hostname: https://controller.aapceddmppkyd6jo.ansiblecloud.redhat.com
-controller_username: admin
-controller_password: <password> # TODO
+# password should be vault encrypted using e.g. ansible-vault encrypt_string '<password>'. Make a note of your vault password, as you'll need to pass it in when prompted while running the playbook, via --ask-vault-pass
+aap_hostname: <your AAP hostname>
+aap_username: admin
+aap_password: <password> # TODO
 
-ah_hostname: https://hub.aapceddmppkyd6jo.ansiblecloud.redhat.com
-ah_username: admin
-ah_password: <password> # TODO
-ah_configuration_async_timeout: 1800
-
-proxy_url: url
-proxy_username: user 
-proxy_password: password
+# proxy_url: url
+# proxy_username: user 
+# proxy_password: password
 
 
-remote_exec_ansible_user: ansible
-remote_exec_ansible_password: <password> # TODO
+# remote_exec_ansible_user: ansible
+# remote_exec_ansible_password: <password> # TODO

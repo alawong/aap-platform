@@ -1,6 +1,6 @@
 ---
 controller_organizations: 
-- name: org_arm
+- name: org_platform
   description: Default organisation
 - name: org_network
   description: Network organisation

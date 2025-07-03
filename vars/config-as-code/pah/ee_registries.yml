@@ -7,3 +7,6 @@ ah_ee_registries:
   timeout: 1800
   username: <user> # TODO
   password: <password> # TODO
+  proxy_url: <proxy URL> # TODO
+  proxy_username: <proxy username> # TODO
+  proxy_password: <proxy_password> # TODO

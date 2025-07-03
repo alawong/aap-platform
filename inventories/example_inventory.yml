@@ -1,0 +1,11 @@
+ungrouped:
+  hosts: 
+    localhost:
+
+dev:
+  dev10:
+  dev11:
+
+prod:
+  prod10:
+  prod11:

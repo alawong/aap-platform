@@ -1,17 +1,9 @@
 ---
 controller_templates:
-- name: jt_aap_controller_configure
+- name: jt_aap_configure
   organization: org_platform
   project: proj_platform
-  playbook: aap_controller_configure.yml
+  playbook: aap_configure.yml
   inventory: inv_localhost
   credentials: 
-    - cred_platform_aap_controller
-
-- name: jt_aap_pah_configure
-  organization: org_platform
-  project: proj_platform
-  playbook: aap_pah_configure.yml
-  inventory: inv_localhost
-  credentials:
-    - cred_platform_aap_pah
+    - cred_platform_aap
